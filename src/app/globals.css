@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 :root {
@@ -16,7 +15,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
 
@@ -26,8 +24,154 @@ body {
   color: var(--foreground);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ========== HACKER GLITCH ========== */
+
+.glitch-link {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.glitch-link::before,
+.glitch-link::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 2;
+
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+
+  padding-inline: 1.25rem;
+  box-sizing: border-box;
+}
+
+.glitch-link::before {
+  color: #60a5fa;
+  clip-path: inset(0 0 70% 0);
+}
+
+.glitch-link::after {
+  color: #ffffff;
+  clip-path: inset(70% 0 0 0);
+}
+
+.glitch-link:hover::before {
+  animation: glitch-top 420ms steps(2, end) forwards;
+}
+
+.glitch-link:hover::after {
+  animation: glitch-bottom 420ms steps(2, end) forwards;
+}
+
+@keyframes glitch-top {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate3d(-3px, -1px, 0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate3d(4px, 0, 0);
+  }
+
+  40% {
+    opacity: 0.85;
+    transform: translate3d(-2px, 1px, 0);
+  }
+
+  55% {
+    opacity: 0.6;
+    transform: translate3d(3px, 0, 0);
+  }
+
+  70% {
+    opacity: 0.25;
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  85% {
+    opacity: 0.08;
+    transform: translate3d(1px, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glitch-bottom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate3d(3px, 1px, 0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40% {
+    opacity: 0.85;
+    transform: translate3d(2px, -1px, 0);
+  }
+
+  55% {
+    opacity: 0.6;
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  70% {
+    opacity: 0.25;
+    transform: translate3d(1px, 0, 0);
+  }
+
+  85% {
+    opacity: 0.08;
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
   }
 }

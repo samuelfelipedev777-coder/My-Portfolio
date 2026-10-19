@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Space_Grotesk,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Geist, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -52,7 +50,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geist.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-white font-sans text-neutral-950 selection:bg-neutral-950 selection:text-white">
+      <body className="min-h-screen bg-white font-sans text-neutral-950 selection:bg-neutral-950 selection:text-white">
+        <SmoothScroll />
+        <Header />
         {children}
       </body>
     </html>
