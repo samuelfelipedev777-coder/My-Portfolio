@@ -1,18 +1,33 @@
 "use client";
-
 import Image from "next/image";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { images } from "@/config/images";
 import { styles } from "@/config/styles";
+import useHeaderScroll from "@/hooks/useHeaderScroll";
+import gsap from "gsap";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { isScrollingDown } = useHeaderScroll();
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!headerRef.current) return;
+
+    gsap.to(headerRef.current, {
+      y: isScrollingDown ? -100 : 0,
+      duration: 0.4,
+      ease: "power2.out"
+    })
+  }, [isScrollingDown]);
 
   return (
     <>
-      <header className={styles.header.root}>
+      <header 
+        ref={headerRef}
+        className={styles.header.root}>
         <nav className={styles.header.nav}>
           <a
             href="/"
