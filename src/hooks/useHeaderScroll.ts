@@ -1,31 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function useHeaderScroll() {
-    const previousScroll = useRef<number>(0);
-    const active: boolean = true;
-    const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false);
+  const previousScroll = useRef(0);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > previousScroll.current) {
-                setIsScrollingDown(true);
-            } else {
-                setIsScrollingDown(false);
-            }
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
 
-            previousScroll.current = window.scrollY;
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
-    }, []);
-
-    return {
-        isScrollingDown,
-        previousScroll,
-        active
+      setIsScrollingDown(currentScroll > previousScroll.current);
+      previousScroll.current = currentScroll;
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return { isScrollingDown };
 }

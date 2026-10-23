@@ -1,3 +1,4 @@
+
 export const styles = {
   // ========== LAYOUT GLOBAL ==========
   layout: {
@@ -86,11 +87,9 @@ export const styles = {
     root:
       "grid w-full grid-cols-2 gap-4 px-6 text-md font-semibold leading-[0.95] tracking-[-0.055em] text-blue-400 md:block md:px-10 md:text-[2.125rem] md:-translate-y-20",
 
-    item:
-      "block text-left md:block",
+    item: "block text-left md:block",
 
-    itemRight:
-      "block text-right md:text-left py-2",
+    itemRight: "block text-right md:text-left py-2",
   },
 
   // ========== HERO ==========
@@ -110,8 +109,7 @@ export const styles = {
     backgroundImage:
       "h-[112%] w-full object-cover object-center will-change-transform max-md:scale-[1.28] max-md:origin-[center_58%] md:object-center",
 
-    image:
-      "object-cover object-center",
+    image: "object-cover object-center",
 
     badge: "",
     title: "",
@@ -163,11 +161,43 @@ export const styles = {
 
   // ========== SOBRE ==========
   about: {
-    section: "",
-    container: "",
+    section:
+      "relative flex w-full h-200 items-center overflow-hidden bg-white px-5 py-24 sm:px-8 sm:py-28 md:px-12 md:py-26 lg:px-16 lg:py-20",
+
+    container:
+      "mx-auto flex w-full max-w-[1600px] items-center",
+
+    content:
+      "w-full",
+
+    textRow:
+      "grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 sm:gap-5 md:gap-8 lg:gap-12",
+
+    icon:
+      "h-5 w-5 shrink-0 self-center text-blue-600 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-9 lg:w-9",
+
+    heart:
+      "justify-self-start",
+
+    coffee:
+      "justify-self-end",
+
+    text:
+      "m-0 w-full min-w-0 font-[var(--font-space-grotesk)] text-[clamp(1.65rem,3.25vw,3.5rem)] font-medium leading-[1.18] tracking-[-0.055em] text-neutral-900 sm:text-[clamp(1.9rem,3.25vw,3.5rem)] md:leading-[1.15]",
+
+    word:
+      "inline-block opacity-0 will-change-[transform,opacity,color]",
+
+    divider:
+      "mt-10 flex w-full items-center justify-center gap-3 sm:mt-12 sm:gap-5 md:mt-16 md:gap-7",
+
+    line:
+      "h-px flex-1 bg-neutral-300",
+
+    dot:
+      "h-2 w-2 shrink-0 rounded-full bg-blue-600 sm:h-2.5 sm:w-2.5",
+
     title: "",
-    content: "",
-    text: "",
     imageWrapper: "",
     image: "",
     skillsWrapper: "",
@@ -232,6 +262,7 @@ export const styles = {
     link: "",
     socialList: "",
     socialLink: "",
+    socialIcon: "",
     copyright: "",
   },
 } as const;
