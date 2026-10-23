@@ -1,4 +1,3 @@
-
 export const styles = {
   // ========== LAYOUT GLOBAL ==========
   layout: {
@@ -45,7 +44,8 @@ export const styles = {
     linksImageWrapper:
       "flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)]",
 
-    linksImage: "h-full w-full object-contain p-1.5 pointer-events-none",
+    linksImage:
+      "h-full w-full object-contain p-1.5 pointer-events-none",
 
     button:
       "relative z-[60] flex h-10 w-10 items-center justify-center rounded-full text-white transition-all duration-300 hover:bg-white/[0.08]",
@@ -56,7 +56,8 @@ export const styles = {
 
   // ========== DRAWER ==========
   drawer: {
-    overlay: "fixed inset-0 z-40 bg-black/35 backdrop-blur-[5px]",
+    overlay:
+      "fixed inset-0 z-40 bg-black/35 backdrop-blur-[5px]",
 
     overlayOpen:
       "pointer-events-auto opacity-100 transition-opacity duration-500",
@@ -73,10 +74,11 @@ export const styles = {
     closed:
       "translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
 
-    list: "flex flex-col pt-28 md:pt-32",
+    list:
+      "flex flex-col pt-28 md:pt-32",
 
     link:
-      "glitch-link relative border border-white/[0.10] bg-white/[0.015] py-7 px-5 text-3xl font-semibold tracking-[-0.04em] text-transparent bg-gradient-to-r from-blue-400 via-blue-200 to-white bg-clip-text transition-all duration-300 hover:border-blue-300/[0.28] hover:bg-white/[0.035] md:py-8 md:text-5xl",
+      "group glitch-link relative flex items-center justify-between border-b border-white/[0.12] bg-transparent px-1 py-7 text-3xl font-medium tracking-[-0.055em] text-blue-400 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-blue-300/40 hover:bg-transparent hover:pl-4 hover:text-white/80 md:py-8 md:text-5xl",
   },
 
   // ========== TEXT ==========
@@ -84,31 +86,32 @@ export const styles = {
     root:
       "grid w-full grid-cols-2 gap-4 px-6 text-md font-semibold leading-[0.95] tracking-[-0.055em] text-blue-400 md:block md:px-10 md:text-[2.125rem] md:-translate-y-20",
 
-    item: 
+    item:
       "block text-left md:block",
 
-    itemRight: 
+    itemRight:
       "block text-right md:text-left py-2",
   },
 
   // ========== HERO ==========
   hero: {
     section:
-      "relative min-h-[100svh] overflow-hidden bg-cover bg-center bg-no-repeat md:min-h-screen",
+      "relative h-[100svh] overflow-hidden bg-cover bg-center bg-no-repeat md:h-screen",
 
     container:
       "relative z-10 px-6 pt-32 md:px-10 md:pt-40 lg:px-14",
 
     content:
-      "relative z-10 pt-[42svh] md:pt-78",
+      "relative z-10 pt-[42svh] md:pt-65",
 
     background:
       "absolute inset-0 z-0 overflow-hidden",
 
     backgroundImage:
-      "h-full w-full object-cover object-center max-md:scale-[1.28] max-md:origin-[center_58%] md:object-center",
+      "h-[112%] w-full object-cover object-center will-change-transform max-md:scale-[1.28] max-md:origin-[center_58%] md:object-center",
 
-    image: "object-cover object-center",
+    image:
+      "object-cover object-center",
 
     badge: "",
     title: "",
@@ -118,7 +121,44 @@ export const styles = {
     primaryButton: "",
     secondaryButton: "",
 
-    imageWrapper: "absolute inset-0 h-full w-full",
+    imageWrapper:
+      "absolute inset-0 h-full w-full",
+
+    interactiveName:
+      "relative z-10 mt-12 md:mt-16",
+
+    interactiveNameDesktop:
+      "hidden md:block",
+
+    freelancer:
+      "mt-2 flex justify-end pr-[6.5vw] text-[clamp(1rem,2vw,2.2rem)] font-medium tracking-[-0.025em] text-blue-400",
+
+    interactiveNameMobileWrapper:
+      "md:hidden",
+
+    interactiveNameMobile:
+      "relative z-10 mt-60 flex justify-center px-2 text-blue-400",
+
+    interactiveNameMobileText:
+      "whitespace-nowrap text-center text-[clamp(3.5rem,17vw,11rem)] font-semibold leading-[0.8] tracking-[-0.09em] [word-spacing:0.14em]",
+
+    freelancerMobile:
+      "mt-2 flex justify-end pr-3 text-[0.85rem] font-medium tracking-[-0.025em] text-blue-400",
+
+    interactiveNameInner:
+      "relative w-full overflow-hidden bg-transparent px-4 py-8 text-blue-400 sm:px-6 md:px-10 md:py-12",
+
+    interactiveNameRow:
+      "flex w-full items-center justify-center gap-[3vw]",
+
+    interactiveNameText:
+      "shrink min-w-0 bg-gradient-to-b from-blue-400/45 via-blue-400/75 to-blue-400 bg-clip-text text-[clamp(2rem,10.2vw,9.5rem)] font-semibold leading-[0.85] tracking-[-0.085em] text-transparent",
+
+    interactiveNameImage:
+      "relative h-[clamp(3.5rem,12vw,9.5rem)] w-[clamp(4.5rem,24vw,21rem)] shrink-0 overflow-hidden rounded-md bg-[#142238]",
+
+    interactiveNameFooter:
+      "mt-7 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 pt-4",
   },
 
   // ========== SOBRE ==========

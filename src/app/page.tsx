@@ -5,7 +5,6 @@ export default function Home() {
     /* Sections Aqui */
     <>
       <Hero />
-      <section className="h-300"></section>
     </>
   );
 }

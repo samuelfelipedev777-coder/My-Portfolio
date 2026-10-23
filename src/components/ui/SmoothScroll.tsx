@@ -3,7 +3,7 @@
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,11 +16,18 @@ export function resetWheelVelocity() {
 }
 
 export default function SmoothScroll() {
-  useEffect(() => {
+  useLayoutEffect(() => {
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+
     const lenis = new Lenis({
       smoothWheel: true,
       lerp: 0.085,
       wheelMultiplier: 2.0,
+    });
+
+    lenis.scrollTo(0, {
+      immediate: true,
     });
 
     lenisInstance = lenis;
@@ -43,7 +50,8 @@ export default function SmoothScroll() {
 
       const intensity = Math.min(Math.abs(delta) / 100, 1);
 
-      wheelVelocity += delta * 0.015 * intensity * (deltaTime / 16.67);
+      wheelVelocity +=
+        delta * 0.015 * intensity * (deltaTime / 16.67);
     };
 
     window.addEventListener("wheel", handleWheel, { passive: true });
