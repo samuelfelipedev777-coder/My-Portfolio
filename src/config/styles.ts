@@ -208,6 +208,24 @@ export const styles = {
     skillName: "",
   },
 
+  // ========== SCROLL EXPERIENCE ==========
+  scrollExperience: {
+    section: "relative h-[700vh] bg-[#07111f]",
+
+    sticky: "sticky top-0 h-[100svh] overflow-hidden bg-[#07111f]",
+
+    canvas: "absolute inset-0 h-full w-full",
+
+    content:
+      "pointer-events-none absolute inset-x-0 top-[20%] z-10 flex flex-col items-center gap-6 px-6",
+
+    text:
+      "scroll-reveal-text max-w-3xl text-center text-3xl font-medium tracking-tight opacity-0 [text-shadow:0_2px_10px_rgba(0,0,0,0.35)] md:text-5xl",
+
+    image:
+      "scroll-reveal-image h-auto w-full max-w-sm rounded-lg object-cover opacity-0",
+  },
+
   // ========== PROJECTS ==========
   projects: {
     section: "",

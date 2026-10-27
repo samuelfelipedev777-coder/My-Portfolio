@@ -11,7 +11,7 @@ import { styles } from "@/config/styles";
 gsap.registerPlugin(ScrollTrigger);
 
 const text =
-  "Tudo começa com a curiosidade de entender como as coisas funcionam. Com o tempo, essa curiosidade se transformou em paixão por tecnologia — e em vontade de transformar ideias em experiências digitais, unindo lógica, criatividade e soluções que fazem sentido.";
+  "Tudo começou com a curiosidade de entender como as coisas funcionam. Com o tempo, essa curiosidade se transformou em paixão por tecnologia — e assim, a vontade de transformar ideias em experiências digitais, unindo lógica, criatividade e soluções que fazem sentido.";
 
 const COLORS = {
   base: "#202633",
