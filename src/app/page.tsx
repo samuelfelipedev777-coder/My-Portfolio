@@ -1,7 +1,7 @@
 import About from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
 import ScrollExperience from "@/components/sections/ScrollExperience";
-import { videos } from "@/config/videos";
+import TheProcess from "@/components/sections/TheProcess";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <ScrollExperience frameCount={86} />
+      <TheProcess />
     </>
   );
 }
